@@ -11,7 +11,8 @@ const componentName = () => {
         <div>
             <Header/>
             <main style={{ minHeight: "75vh" }}>
-            {/* <Slider_prop/> */}
+            
+
                 <Slider/>
                 <Kartochki/>
                 <Sub/>

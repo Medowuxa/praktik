@@ -2,10 +2,46 @@ import React from 'react';
 import Pic1 from '../image/pets/ezh.jpg';
 import Pic2 from '../image/pets/krol.jpeg';
 import Pic3 from '../image/pets/porosya.jpg';
+import Slide from './Slide';
 
 
 
 function Slider(props) {
+  // useEffect(()=>req_slide(slide, setSlide), []);
+  
+  var props=[{
+    "data": {
+        "id": 6,
+        "kind": "Кенгуру",
+        "description": "Кенгуру из Бразилии, любит прыгать, ласковая",
+        "image": "/storage/images/06vZ5JD5SiY9scNCLx6NRku8f7t85CvBbSmbGObu.png"
+    },
+    "css_class": "carousel-item active"
+  },
+  {
+    "data": {
+        "id": 6,
+        "kind": "Кенгуру",
+        "description": "Кенгуру из Бразилии, любит прыгать, ласковая",
+        "image": "/storage/images/06vZ5JD5SiY9scNCLx6NRku8f7t85CvBbSmbGObu.png"
+    },
+    "css_class": "carousel-item"
+  },
+
+  {
+    "data": {
+        "id": 6,
+        "kind": "Кенгуру",
+        "description": "Кенгуру из Бразилии, любит прыгать, ласковая",
+        "image": "/storage/images/06vZ5JD5SiY9scNCLx6NRku8f7t85CvBbSmbGObu.png"
+    },
+    "css_class": "carousel-item"
+  }
+
+];
+
+
+
   return (
         <div>
             <h2 className="text-center text-white bg-success m-2">Найденные животные</h2>
@@ -38,7 +74,7 @@ function Slider(props) {
       />
     </div>
     <div className="carousel-inner">
-      <div className="carousel-item active">
+      {/* <div className="carousel-item active">
         <img
           src={Pic1}
           className="d-block m-auto"
@@ -49,8 +85,12 @@ function Slider(props) {
         <p className="text-center">
           Маленький ежик, был утерян в приморcком районе
         </p>
-      </div>
-      <div className="carousel-item">
+      </div> */}
+      {console.log(props)}
+      <Slide {...props[0]}/>
+      <Slide {...props[1]}/>
+      <Slide {...props[2]}/>
+      {/* <div className="carousel-item">
         <img
           src={Pic2}
           className="d-block m-auto"
@@ -73,7 +113,7 @@ function Slider(props) {
         <p className="text-center">
           Розовый мини пиг, был утерян в пушкинском районе
         </p>
-      </div>
+      </div> */}
     </div>
     <button
       className="carousel-control-prev"
