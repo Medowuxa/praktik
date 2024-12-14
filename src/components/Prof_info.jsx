@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 
 
 
 function Prof_info(props) {
+  
   let [user, setUser]=useState();  
   let history=useNavigate();  
 
@@ -12,37 +13,43 @@ function Prof_info(props) {
     myHeaders.append("Content-Type", "application/json");
     //myHeaders.append("Authorization","Bearer zxW5WdPk7Fkds2nxGpykoedR3iHb3zsgkDdBCGR8F8XziG0LJxTeuGk0o9v2BNjBG0TzGdueHlZ3qG2D");
     myHeaders.append("Authorization", "Bearer " + localStorage.getItem('token'));
+    useEffect(()=>req_user(user, setUser), []);
   
-    let raw = JSON.stringify(user);
+    function req_user(user, setUser){
+      let requestOptions = {
+        method: 'GET',
+        headers: myHeaders,
+          };
+  
+          fetch("https://pets.xn--80ahdri7a.site/api/users", requestOptions)
+  
+          .then(response=> response.json())  
+          .then(result=>{
+          
+          
+          if (result){
+  
+            setUser(result);
+              // localStorage.token=result.data.token
+                // setToken(result.data.token)
+             //history('/profile')
+                // document.getElementById('success').style.display='block'
+                // document.getElementById('error').style.display='none'
+          } else {
+          // document.getElementById('error').style.display='block'
+          // document.getElementById('success').style.display='none'
+          // document.getElementById('validationCustom02').value=''
+              history("/vhod");
+          }
+          // debugger;
+          // console.log({user})
+        });
+    }
+
+
+    //let raw = JSON.stringify(user);
     
-    let requestOptions = {
-      method: 'GET',
-      headers: myHeaders,
-        };
 
-        fetch("https://pets.xn--80ahdri7a.site/api/users", requestOptions)
-
-        .then(response=> response.json())  
-        .then(result=>{
-        
-        
-        if (result){
-
-          setUser(result);
-            // localStorage.token=result.data.token
-              // setToken(result.data.token)
-           //history('/profile')
-              // document.getElementById('success').style.display='block'
-              // document.getElementById('error').style.display='none'
-        } else {
-        // document.getElementById('error').style.display='block'
-        // document.getElementById('success').style.display='none'
-        // document.getElementById('validationCustom02').value=''
-            history("/vhod");
-        }
-        // debugger;
-        // console.log({user})
-      });
 
   return (
     <div>
@@ -96,8 +103,8 @@ function Prof_info(props) {
       </p>
       <p className="w-50" style={{ minWidth: 300 }}>
         {console.log(user)}
-        
-        {/* {user.countPets} */}
+        {/* {console.log('ddd')}
+        {user.id} */}
       </p>
     </div>
   </div>
