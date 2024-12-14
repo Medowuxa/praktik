@@ -2,20 +2,21 @@ import React from 'react';
 import Pic1 from '../image/pets/ezh.jpg';
 
 function Slide(props) {
-    debugger;
+  
     return (
        
-            <div className={props.css_class}>
+            <div className={props.css_class} style={{marginTop: 20 }}>
+              <h2 className="text-center text-success">{props.data.kind}</h2>
+        <p className="text-center">
+          {props.data.description}
+        </p>
         <img
           src={'https://pets.сделай.site'+props.data.image}
           className="d-block m-auto"
           alt={props.data.kind}
-          style={{ height: 200 }}
+          style={{ height: 250 , paddingBottom: 30 }}
         />
-        <h2 className="text-center">{props.data.kind}</h2>
-        <p className="text-center">
-          {props.data.description}
-        </p>
+        
       
         </div>
     );

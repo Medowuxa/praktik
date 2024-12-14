@@ -35,7 +35,7 @@ const componentName = () => {
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
           <li className="nav-item">
             
-            <Link to={'/profile'} className="nav-link">
+            <Link to={'/vhod'} className="nav-link">
               Личный кабинет
               </Link>
             

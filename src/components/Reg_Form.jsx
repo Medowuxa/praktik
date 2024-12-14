@@ -1,10 +1,12 @@
 import React from 'react';
+import Vhod from '../components/Vhod';
+import { Link } from 'react-router-dom';
 
 const componentName = () => {
     return (
         <div>
             <>
-  <div
+  {/* <div
     className="modal fade"
     id="exampleModal"
     tabIndex={-1}
@@ -47,23 +49,7 @@ const componentName = () => {
                 id="inputPassword4"
               />
             </div>
-            <div className="col-12">
-              <div className="form-check">
-                <input
-                  className="form-check-input"
-                  type="checkbox"
-                  id="gridCheck"
-                />
-                <label className="form-check-label" htmlFor="gridCheck">
-                  Запомнить меня
-                </label>
-              </div>
-            </div>
-            <div className="justify-content-center ">
-              <a href="#" style={{ marginRight: 10 }}>Регистрация</a>
-              <a href="#" style={{ marginRight: 10 }}>Забыли логин?</a>
-              <a href="#">Забыли пароль?</a>
-            </div>
+          
           </form>
         </div>
         <div className="modal-footer">
@@ -73,7 +59,7 @@ const componentName = () => {
         </div>
       </div>
     </div>
-  </div>
+  </div> */}
   <h2 className="text-center text-white bg-success m-2">Регистрация</h2>
   <div className="p-3">
     <form className="w-50 m-auto border p-3" style={{ minWidth: 300 }}>
@@ -125,20 +111,24 @@ const componentName = () => {
           Согласие на обработку персональных данных
         </label>
       </div>
+      <div style={{ display: "flex" }}>
       <button
         type="submit"
         className="btn btn-success"
        
         style={{ marginRight: 10 }}
       >Зарегистрироваться</button>
+      <Link to={'/vhod'}>
       <button
         type="button"
         className="btn btn-success "
-        data-bs-toggle="modal"
+       
         data-bs-target="#exampleModal"
       >
         Вход
       </button>
+      </Link>
+      </div>
     </form>
   </div>
 </>

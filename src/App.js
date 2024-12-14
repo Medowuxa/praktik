@@ -4,6 +4,7 @@ import Main from './pages/Main';
 import Registration from './pages/Registration';
 import Add_pet from './pages/Add_pet';
 import Search from './pages/Search';
+import Vhod_page from './pages/Vhod_page';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Route path={'/registration'} element={<Registration/>}/>
       <Route path={'/add_pet'} element={<Add_pet/>}/>
       <Route path={'/search'} element={<Search/>}/>
+      <Route path={'/vhod'} element={<Vhod_page/>}/>
       </Routes>
     </div>
   );
