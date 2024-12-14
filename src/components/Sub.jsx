@@ -1,6 +1,8 @@
 import React from 'react';
 
+
 const componentName = () => {
+    
     return (
         <div>
             <h2 className="text-center text-black bg-success bg-opacity-25 m-2">

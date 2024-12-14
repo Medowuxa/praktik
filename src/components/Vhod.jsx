@@ -19,6 +19,7 @@ const Login = () => {
            } 
          
        console.log(user)
+       
        let myHeaders = new Headers();
        myHeaders.append("Content-Type", "application/json");
      
@@ -35,10 +36,11 @@ const Login = () => {
        .then(response=> response.json())  
        .then(result=>{
          console.log(result)
+         
            if ('data' in result){
-           localStorage.token=result.data.token
-             setToken(result.data.token)
-             localStorage.token=token;
+             localStorage.token=result.data.token
+             //setToken(result.data.token)
+             //localStorage.token=token;
             history('/profile')
              document.getElementById('success').style.display='block'
              document.getElementById('error').style.display='none'
