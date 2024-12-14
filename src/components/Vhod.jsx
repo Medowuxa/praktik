@@ -32,7 +32,7 @@ const Login = () => {
          redirect: 'follow'
        };
        
-       fetch("https://pets.сделай.site/api/login", requestOptions)
+       fetch("https://pets.xn--80ahdri7a.site/api/login", requestOptions)
        .then(response=> response.json())  
        .then(result=>{
          console.log(result)

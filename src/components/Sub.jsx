@@ -3,7 +3,16 @@ import React from 'react';
 
 const componentName = () => {
     
-    return (
+
+  let requestOptions = {
+    method: 'POST',
+    redirect: 'follow'
+  };
+
+  fetch("https://pets.xn--80ahdri7a.site/api/subscription", requestOptions)
+  .then(response=> response.json())  
+        
+   return (
         <div>
             <h2 className="text-center text-black bg-success bg-opacity-25 m-2">
     Подписка на новости
