@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Pic10 from '../image/pets/kot.jpg';
 import Pic11 from '../image/pets/pes.jpg';
 import Pic12 from '../image/pets/kotan.jpg';
 
-const componentName = () => {
+
+function Prof_red_kart(props) {
+
     return (
         <div>
            <>
-  <h2 className="text-center text-white bg-success m-2">
-    Добавленные объявления
-  </h2>
   <div className="d-flex flex-row flex-wrap">
     <div
       className="d-flex flex-row flex-wrap border m-3 p-3 position-relative"
@@ -33,7 +32,7 @@ const componentName = () => {
         id:
       </p>
       <p className="w-50" style={{ minWidth: 300, marginBottom: 10 }}>
-        14
+      14
       </p>
       <p
         className="w-50 text-primary"
@@ -43,7 +42,7 @@ const componentName = () => {
       </p>
       <p className="w-50" style={{ minWidth: 300, marginBottom: 10 }}>
         {" "}
-        Кошка
+        {props.data.kind}
       </p>
       <p
         className="w-50 text-primary"
@@ -287,5 +286,4 @@ const componentName = () => {
         </div>
     );
 };
-
-export default componentName;
+export default Prof_red_kart;

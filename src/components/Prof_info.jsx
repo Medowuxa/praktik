@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
 function Prof_info(props) {
+  
+
   const [user, setUser] = useState(null);  // Изначально состояние user - null, а не undefined
   const history = useNavigate();
 
