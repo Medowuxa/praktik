@@ -1,6 +1,7 @@
 import React from 'react';
 import Logo from "../image/logo.png"
 import { Link } from 'react-router-dom';
+import Fast_Search from './Fast_search'
 
 const componentName = () => {
     return (
@@ -63,7 +64,8 @@ const componentName = () => {
           </li>
         </ul>
         <form className="d-flex">
-          <input
+          <Fast_Search/>
+          {/* <input
             className="form-control me-2"
             type="search"
             list="pets"
@@ -79,7 +81,7 @@ const componentName = () => {
             <option value="Корова"></option>
             <option value="Крокодил"></option>
             <option value="Сова"></option>
-          </datalist>
+          </datalist> */}
         </form>
       </div>
     </div>

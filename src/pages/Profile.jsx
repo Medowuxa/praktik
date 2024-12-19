@@ -39,6 +39,7 @@ function Profile(props) {
             console.error("Error fetching user data:", error);
          
         }
+  
     }
 
     return (
@@ -52,7 +53,7 @@ function Profile(props) {
                     Добавленные объявления
                 </h2>
                 <div
-                    className="d-flex flex-row flex-wrap"
+                    className="d-flex flex-row"
                     style={{ paddingLeft: "11%", paddingRight: "11%" }}
                 >
                     {orders.length > 0 ? (
